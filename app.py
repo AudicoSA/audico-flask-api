@@ -1,17 +1,12 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # ✅ Add this
+from flask_cors import CORS
 import json
 from difflib import get_close_matches
 
 app = Flask(__name__)
-CORS(app)  # ✅ Add this to allow cross-origin API calls
+CORS(app)  # Allow cross-origin requests from other domains like Vercel
 
-from flask import Flask, request, jsonify
-import json
-from difflib import get_close_matches
-
-app = Flask(__name__)
-
+# Load product data from file
 with open("products.json") as f:
     PRODUCTS = json.load(f)
 
