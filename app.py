@@ -4,7 +4,11 @@ import json
 from difflib import get_close_matches
 
 app = Flask(__name__)
-CORS(app)  # Allow cross-origin requests from other domains like Vercel
+CORS(app, origins=[
+    "https://audicoonline-quote-widget.vercel.app",
+    "https://www.audicoonline.co.za"
+])
+
 
 # Load product data from file
 with open("products.json") as f:
